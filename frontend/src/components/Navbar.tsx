@@ -4,8 +4,6 @@ import { useTheme } from "../context/ThemeContext";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Code2,
-  Hamburger,
-  HamburgerIcon,
   Menu,
   Moon,
   Sun,
