@@ -352,14 +352,14 @@ const MobileContentLayout = ({
       {/* tect stack - mobile */}
       <motion.div
         variants={itemVariants}
-        className="flex justify-center items-center space-x-2 tracking-widest uppercase text-sm"
+        className="flex justify-center items-center space-x-3 tracking-widest uppercase text-sm"
       >
-        {["React", "Next.js", "Node.js", "TypeScript", "MongoDB"].map(
+        {["Next.js", "Node.js", "TypeScript", "MongoDB"].map(
           (item, index) => {
             return (
               <>
                 <span className="text-gray-500 dark:text-gray-600">{item}</span>
-                {index != 4 && (
+                {index != 3 && (
                   <span className="text-gray-400 dark:text-gray-700">⏐</span>
                 )}
               </>
