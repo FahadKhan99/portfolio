@@ -38,7 +38,7 @@ export const SKILL_CATEGORY = [
       {
         name: "Next.js",
         level: 82,
-        color: "bg-gray-800",
+        color: "bg-gray-500",
       },
       {
         name: "Tailwind CSS",
@@ -65,7 +65,7 @@ export const SKILL_CATEGORY = [
       {
         name: "Express.js",
         level: 88,
-        color: "bg-gray-700",
+        color: "bg-gray-500",
       },
       {
         name: "Java",
@@ -134,7 +134,7 @@ export const SKILL_CATEGORY = [
       {
         name: "Vercel",
         level: 90,
-        color: "bg-gray-900",
+        color: "bg-gray-500",
       },
       {
         name: "Git",
