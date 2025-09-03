@@ -12,8 +12,8 @@
   }
 
   body {
-    @apply bg-white dark:bg-black overflow-x-hidden;
-    /* background-color: black; */
+    /* @apply bg-white dark:bg-black overflow-x-hidden; */
+    background-color: black;
     overflow-x: hidden,
   }
 }
