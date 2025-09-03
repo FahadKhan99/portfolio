@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/sections/HeroSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
 import SkillsSection from "./components/sections/SkillsSection";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -10,6 +11,7 @@ function App() {
         <Navbar />
         <HeroSection />
         <SkillsSection />
+        <ProjectsSection />
       </div>
     </ThemeProvider>
   );
