@@ -28,7 +28,7 @@ const HeroSection = () => {
       {/* hero section */}
       <motion.section
         id="home"
-        style={{ y: scrollY }}
+        //style={{ y: scrollY }}
         className="min-h-screen flex items-center justify-center relative px-6 pt-8"
       >
         <div className="absolute inset-0 overflow-hidden">
