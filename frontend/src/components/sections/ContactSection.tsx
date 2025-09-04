@@ -4,6 +4,7 @@ import { containerVariants, itemVariants } from "../../utils/helper";
 import { useRef, useState } from "react";
 import TextInput from "../inputs/TextInput";
 import { Send } from "lucide-react";
+import SuccessModel from "../SuccessModel";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -171,6 +172,8 @@ const ContactSection = () => {
           </motion.div>
         </div>
       </div>
+
+      <SuccessModel showSuccess={showSuccess} setShowSuccess={setShowSuccess} />
     </section>
   );
 };
