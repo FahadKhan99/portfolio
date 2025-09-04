@@ -1,8 +1,16 @@
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  type Variants,
+} from "framer-motion";
 import { JOURNEY_STEPS, PASSIONS } from "../../utils/data";
 import { useRef } from "react";
 
-import SIGNATURE from "../../assets/images/signature.png";
+// import SIGNATURE from "../../assets/images/signature.png";
+// import SIGNATURE2 from "../../assets/images/image.png";
+import SIGNATURE3 from "../../assets/images/image copy.png";
 import { containerVariants, itemVariants } from "../../utils/helper";
 
 const AboutSection = () => {
@@ -22,19 +30,19 @@ const AboutSection = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-  const timeLineVariants = {
+  const timeLineVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
         delayChildren: 0.3,
       },
     },
   };
 
-  const stepVariants = {
-    hidden: { x: -50, opacity: 0 },
+  const stepVariants: Variants = {
+    hidden: { x: -70, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -84,8 +92,8 @@ const AboutSection = () => {
           </motion.h2>
         </motion.div>
 
-        {/* Personal Story */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          {/* Personal Story */}
           <motion.div
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -150,14 +158,90 @@ const AboutSection = () => {
                 Crafted with passion by{" "}
               </div>
               <div className="flex justify-center">
-                <img src={SIGNATURE} alt="Fahad" className="w-30" />
+                <img src={SIGNATURE3} alt="Fahad" className="w-38" />
               </div>
-              <div className="text-lg tracking-widest font-light text-blue-500 dark:text-blue-400 mt-2">
+              <div className="text-xl tracking-widest font-light text-blue-500 dark:text-blue-400 mt-2">
                 Fahad Khan
               </div>
             </motion.div>
           </motion.div>
+
+          {/* developer journey timeline */}
+          <motion.div
+            ref={timeLineRef}
+            initial="hidden"
+            animate={timeLineInView ? "visible" : "hidden"}
+            variants={timeLineVariants}
+            className="relative"
+          >
+            <h3 className="text-2xl font-medium mb-8 text-center lg:text-left">
+              My Developer Journey
+            </h3>
+            {/* timeline Line */}
+            <div className="absolute w-px top-16 left-8 bottom-1 bg-gray-300 dark:bg-gray-700" />
+
+            <div className="space-y-8">
+              {JOURNEY_STEPS.map((step, index) => {
+                return (
+                  <motion.div
+                    key={index}
+                    variants={stepVariants}
+                    whileHover={{ x: 4 }}
+                    className="relative flex items-start space-x-6 group"
+                  >
+                    {/* timeline dot */}
+                    <div
+                      className={`relative z-10 flex flex-shrink-0 w-16 h-16 rounded-full ${step.color} items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <step.icon size={24} className="text-white" />
+                    </div>
+
+                    {/* content */}
+                    <div className="flex-grow p-6 rounded-xl border tranition-all duration-300 bg-white/80 border-gray-200 group-hover:border-gray-300 group-hover:bg-white dark:bg-gray-800/50 dark:text-white dark:group-hover:bg-gray-800/70 dark:border-gray-700 dark:group-hover:border-gray-600 backdrop-blur-sm">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-xl font-medium">{step.title}</h4>
+                        <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-white ">
+                          {step.year}
+                        </span>
+                      </div>
+                      <div className="font-medium text-blue-600 dark:text-blue-400 mb-3">
+                        {step.company}
+                      </div>
+
+                      <p className="font-light leading-relaxed text-gray-700 dark:text-gray-400">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={containerVariants}
+          className="text-center mt-20"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center space-y-5"
+          >
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Ready to bring your ideas to life?
+            </p>
+            <motion.button
+              whileHover={{ y: -2, scale: 1.05 }}
+              whileTap={{ scale: 1.08 }}
+              className="bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 rounded-full uppercase tracking-wider font-medium transition-all duration-300"
+            >
+              Let's Work Together
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
