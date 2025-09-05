@@ -7,7 +7,7 @@ import { ArrowUp, Code2, Heart } from "lucide-react";
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(footerRef, { once: true, margin: "-50%" });
+  const isInView = useInView(footerRef, { once: true, margin: "-20%" });
 
   const { scrollYProgress } = useScroll();
 
@@ -62,12 +62,18 @@ const Footer = () => {
         style={{ y }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
       >
-        <div className="absolute bottom-10 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-5 bg-blue-400 dark:bg-blue-500" />
+        <div
+          className="absolute bottom-10 left-1/4 w-64 h-64 rounded-full bg-blue-400/10 dark:bg-blue-500/10"
+          style={{ filter: "blur(70px)" }}
+        />
 
-        <div className="absolute top-10 right-1/3 w-48 h-48 rounded-full blur-3xl  opacity-5 bg-purple-400 dark:bg-purple-500" />
+        <div
+          className="absolute top-10 right-1/3 w-48 h-48 rounded-full bg-purple-400/10 dark:bg-purple-500/10"
+          style={{ filter: "blur(80px)" }}
+        />
       </motion.div>
 
-      <div className="relative z-10 px-6 py-16 mt-20">
+      <div className="relative z-10 px-6 py-16 mt-5">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer */}
           <motion.div

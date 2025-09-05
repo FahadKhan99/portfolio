@@ -16,7 +16,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sectionRef = useRef<HTMLSelectElement | null>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100%" });
+  const isInView = useInView(sectionRef, { once: true, margin: "-40%" });
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -59,9 +59,14 @@ const ContactSection = () => {
     >
       {/* background elements */}
       <motion.div style={{ y }} className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-5 bg-blue-400 dark:bg-blue-500" />
-
-        <div className="absolute bottom-40 right-1/4 w-80 h-80 rounded-full blur-3xl  opacity-5 bg-purple-400 dark:bg-purple-500" />
+        <div
+          className="absolute top-20 left-1/4 w-72 h-72 rounded-full bg-blue-400/20 dark:bg-blue-500/20"
+          style={{ filter: "blur(70px)" }}
+        />
+        <div
+          className="absolute bottom-40 right-1/4 w-80 h-80 rounded-full bg-purple-400/10 dark:bg-purple-500/10"
+          style={{ filter: "blur(80px)" }}
+        />
       </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">

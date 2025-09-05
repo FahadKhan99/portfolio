@@ -61,9 +61,15 @@ const AboutSection = () => {
     >
       {/* background elements */}
       <motion.div style={{ y }} className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 right-1/3 w-80 h-80 rounded-full blur-3xl opacity-5 bg-blue-400 dark:bg-blue-500" />
+        <div
+          className="absolute top-40 right-1/3 w-80 h-80 rounded-full bg-blue-400/20 dark:bg-blue-500/20"
+          style={{ filter: "blur(70px)" }}
+        />
 
-        <div className="absolute bottom-20 left-1/3 w-96 h-96 rounded-full blur-3xl  opacity-5 bg-purple-400 dark:bg-purple-500" />
+        <div
+          className="absolute bottom-20 left-1/3 w-96 h-96 rounded-full bg-purple-400/10 dark:bg-purple-500/10"
+          style={{ filter: "blur(80px)" }}
+        />
       </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">

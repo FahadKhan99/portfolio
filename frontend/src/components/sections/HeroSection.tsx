@@ -1,4 +1,4 @@
-import { useScroll } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import PROFILE_IMG from "../../assets/images/profile.webp";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
@@ -12,7 +12,7 @@ import {
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
-  //const heroY = useTransform(scrollY, [0, 500], [0, -100]);
+  const heroY = useTransform(scrollY, [0, 500], [0, -100]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,8 +26,8 @@ const HeroSection = () => {
       {/* hero section */}
       <motion.section
         id="home"
-        style={{ y: scrollY }}
-        className="min-h-screen flex items-center justify-center relative px-6 pt-8"
+        style={{ y: heroY }}
+        className="min-h-screen flex items-center justify-center relative px-6 sm:pt-8"
       >
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -40,7 +40,8 @@ const HeroSection = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl  opacity-15 bg-blue-800 dark:bg-blue-500"
+            className="absolute top-20 right-20 w-64 h-64 rounded-full bg-blue-400/20 dark:bg-blue-500/20"
+            style={{ filter: "blur(70px)" }}
           />
 
           <motion.div
@@ -53,7 +54,8 @@ const HeroSection = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute bottom-20 left-20 w-48 h-48 rounded-full blur-3xl  opacity-15 bg-purple-800 dark:bg-purple-500"
+            className="absolute bottom-20 left-20 w-48 h-48 rounded-full bg-purple-400/20 dark:bg-purple-500/20"
+            style={{ filter: "blur(80px)" }}
           />
         </div>
 
@@ -76,7 +78,7 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 
+          className="absolute bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 
              p-3 rounded-full 
              bg-white/10 dark:bg-gray-900/40 
              backdrop-blur-md shadow-lg 
@@ -308,7 +310,7 @@ const MobileContentLayout = ({
       {/* CTA button - mobile */}
       <motion.div
         variants={itemVariants}
-        className="flex flex-col sm:flex-row mb-8 gap-4 items-center justify-center"
+        className="flex mb-8 gap-4 items-center justify-center"
       >
         <motion.button
           whileHover={{ scale: 1.05, y: -2 }}
@@ -331,7 +333,7 @@ const MobileContentLayout = ({
       {/* social links - mobile */}
       <motion.div
         variants={itemVariants}
-        className="flex items-center justify-center space-x-4 mb-8"
+        className="flex items-center justify-center space-x-4 mb-4"
       >
         {[
           { icon: FiGithub, href: "#" },
@@ -354,7 +356,7 @@ const MobileContentLayout = ({
       {/* tect stack - mobile */}
       <motion.div
         variants={itemVariants}
-        className="flex justify-center items-center space-x-3 tracking-widest uppercase text-sm"
+        className="flex justify-center items-center space-x-2 tracking-widest uppercase text-sm"
       >
         {["Next.js", "Node.js", "TypeScript", "MongoDB"].map((item, index) => {
           return (

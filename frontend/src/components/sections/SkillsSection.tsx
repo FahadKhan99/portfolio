@@ -35,9 +35,15 @@ const SkillsSection = () => {
     >
       {/* background elements */}
       <motion.div style={{ y }} className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 right-1/4 w-72 h-72 rounded-full blur-2xl opacity-5 bg-blue-400 dark:bg-blue-500" />
+        <div
+          className="absolute top-40 right-1/4 w-72 h-72 rounded-full bg-blue-400/20 dark:bg-blue-500/20"
+          style={{ filter: "blur(90px)" }}
+        />
 
-        <div className="absolute bottom-20 left-1/4 w-72 h-72 rounded-full blur-2xl  opacity-5 bg-purple-400 dark:bg-purple-500" />
+        <div
+          className="absolute bottom-20 left-1/4 w-72 h-72 rounded-full bg-purple-400/10 dark:bg-purple-500/10"
+          style={{ filter: "blur(100px)" }}
+        />
       </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -177,7 +183,11 @@ const SkillsSection = () => {
         >
           {STATS.map((stat, index) => {
             return (
-              <motion.div key={index} variants={itemVariants} className="text-center">
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="text-center"
+              >
                 <div className="text-2xl md:text-3xl font-light text-blue-500 dark:text-blue-400 mb-2">
                   {stat.number}
                 </div>
