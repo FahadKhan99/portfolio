@@ -1,6 +1,5 @@
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 import PROFILE_IMG from "../../assets/images/profile.webp";
-import { useTheme } from "../../context/ThemeContext";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { ArrowDown, Mail } from "lucide-react";
@@ -12,9 +11,8 @@ import {
 } from "../../utils/helper";
 
 const HeroSection = () => {
-  const { isDarkMode } = useTheme();
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 500], [0, -100]);
+  //const heroY = useTransform(scrollY, [0, 500], [0, -100]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

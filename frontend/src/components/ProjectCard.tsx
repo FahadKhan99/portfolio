@@ -16,10 +16,9 @@ type Project = {
 
 interface Props {
   project: Project;
-  index: number;
 }
 
-const ProjectCard = ({ project, index }: Props) => {
+const ProjectCard = ({ project }: Props) => {
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
