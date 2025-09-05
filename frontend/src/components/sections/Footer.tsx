@@ -67,7 +67,7 @@ const Footer = () => {
         <div className="absolute top-10 right-1/3 w-48 h-48 rounded-full blur-3xl  opacity-5 bg-purple-400 dark:bg-purple-500" />
       </motion.div>
 
-      <div className="relative z-10 px-6 py-16">
+      <div className="relative z-10 px-6 py-16 mt-20">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer */}
           <motion.div

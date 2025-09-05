@@ -10,7 +10,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 function App() {
   return (
     <ThemeProvider>
-      <div>
+      <div className="overflow-x-hidden">
         <Navbar />
         <HeroSection />
         <SkillsSection />

@@ -12,8 +12,7 @@
   }
 
   body {
-    /* @apply bg-white dark:bg-black overflow-x-hidden; */
-    background-color: black;
+    @apply bg-gray-100/40 dark:bg-gray-950 overflow-x-hidden;
     overflow-x: hidden,
   }
 }

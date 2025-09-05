@@ -28,7 +28,7 @@ const HeroSection = () => {
       {/* hero section */}
       <motion.section
         id="home"
-        //style={{ y: scrollY }}
+        style={{ y: scrollY }}
         className="min-h-screen flex items-center justify-center relative px-6 pt-8"
       >
         <div className="absolute inset-0 overflow-hidden">
@@ -76,11 +76,15 @@ const HeroSection = () => {
 
         {/* scroll indicator */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeIn" }}
-          className="absolute bottom-5 left-1/2 transform -translate-x-1/2 "
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 
+             p-3 rounded-full 
+             bg-white/10 dark:bg-gray-900/40 
+             backdrop-blur-md shadow-lg 
+             border border-white/20"
         >
-          <ArrowDown size={20} className="text-gray-400 dark:text-gray-500" />
+          <ArrowDown className="size-6 dark:text-gray-300 drop-shadow-sm" />
         </motion.div>
       </motion.section>
     </div>
@@ -354,18 +358,16 @@ const MobileContentLayout = ({
         variants={itemVariants}
         className="flex justify-center items-center space-x-3 tracking-widest uppercase text-sm"
       >
-        {["Next.js", "Node.js", "TypeScript", "MongoDB"].map(
-          (item, index) => {
-            return (
-              <>
-                <span className="text-gray-500 dark:text-gray-600">{item}</span>
-                {index != 3 && (
-                  <span className="text-gray-400 dark:text-gray-700">⏐</span>
-                )}
-              </>
-            );
-          }
-        )}
+        {["Next.js", "Node.js", "TypeScript", "MongoDB"].map((item, index) => {
+          return (
+            <>
+              <span className="text-gray-500 dark:text-gray-600">{item}</span>
+              {index != 3 && (
+                <span className="text-gray-400 dark:text-gray-700">⏐</span>
+              )}
+            </>
+          );
+        })}
       </motion.div>
     </motion.div>
   );
